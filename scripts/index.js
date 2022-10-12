@@ -58,7 +58,7 @@ function showConfirmationPage() {
   whatsAppText = "Olá, gostaria de fazer o pedido:\n- Prato: "
   const trailingString = [
     "\n- Bebida: ",
-    "\n- Sobremesa ",
+    "\n- Sobremesa: ",
     "\nTotal: R$ "
   ]
   for (let i = 0; i < productTypes.length; i++) {
