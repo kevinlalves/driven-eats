@@ -103,7 +103,7 @@ img {
   scrollbar-width: none;  /* Firefox */
 }
 
-.product-row:-webkit-scrollbar {
+.product-row::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
 
