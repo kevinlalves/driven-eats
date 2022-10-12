@@ -50,11 +50,12 @@ function validityCheck() {
   }
 }
 
-let whatsAppText = "Olá, gostaria de fazer o pedido:\n- Prato: ";
+let whatsAppText;
 function showConfirmationPage() {
   const confirmationPage = document.getElementById("confirmation-page");
   const lines = confirmationPage.firstElementChild.querySelectorAll(".c-line");
   let totalPrice = 0;
+  whatsAppText = "Olá, gostaria de fazer o pedido:\n- Prato: "
   const trailingString = [
     "\n- Bebida: ",
     "\n- Sobremesa ",
@@ -93,6 +94,7 @@ function sendResquest() {
     whatsAppText += `Nome: ${name}\n`;
     whatsAppText += `Endereço: ${address}\n\n`;
     window.open(`https://wa.me/${restaurantNumber}?text=${encodeURIComponent(whatsAppText)}`, "_blank");
+    hideConfirmationScreen();
   } else {
     alert("Tente outra vez, lembrando de preencher os dados!");
   }
