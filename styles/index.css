@@ -1,7 +1,11 @@
-body {
+:root {
   --main-color: white;
   --sub-color: black;
   --back-color: #E5E5E5;
+}
+
+body {
+
   background-color: var(--back-color);
 }
 
@@ -49,7 +53,6 @@ img {
 .button p {
   text-align: center;
   font-size: 20px;
-  height: 40px;
   width: 200px;
 }
 
@@ -62,11 +65,12 @@ img {
   position: absolute;
   bottom: 8px;
   right: 5px;
-  color: var(--main-color);
+  visibility: hidden;
 }
 
 .selected ion-icon {
   color: #32B72F;
+  visibility: visible;
 }
 
 .header {

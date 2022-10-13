@@ -39,7 +39,7 @@ function validityCheck() {
     const confirmButton = document.getElementById("confirm-button");
     const leaveButton = document.getElementById("cancel");
     const sendButton = document.getElementById("send-button");
-    confirmButton.innerText = "Fechar pedido";
+    confirmButton.innerHTML = "<p>Fechar pedido</p>";
     confirmButton.classList.add("valid");
     productTypes.forEach(productType => {
       productType.removeValidityCheck();
