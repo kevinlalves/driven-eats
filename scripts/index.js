@@ -10,6 +10,7 @@ class Product {
     this.selected = undefined;
   }
   changeSelected(e) {
+    e.preventDefault();
     if (e.currentTarget !== this.selected) {
       this.selected?.classList.remove("selected");
       e.currentTarget.classList.add("selected");
