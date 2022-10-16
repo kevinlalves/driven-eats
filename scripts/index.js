@@ -29,7 +29,7 @@ const productTypes = [
   new Product("meals"),
   new Product("beverages"),
   new Product("deserts")
-]
+];
 
 function validityCheck() {
   let valid = true;
@@ -56,23 +56,25 @@ function showConfirmationPage() {
   const confirmationPage = document.getElementById("confirmation-page");
   const lines = confirmationPage.firstElementChild.querySelectorAll(".c-line");
   let totalPrice = 0;
-  whatsAppText = "Olá, gostaria de fazer o pedido:\n- Prato: "
+  whatsAppText = "Olá, gostaria de fazer o pedido:\n- Prato: ";
   const trailingString = [
     "\n- Bebida: ",
     "\n- Sobremesa: ",
     "\nTotal: R$ "
-  ]
+  ];
+  const currencySymbolLen = 3;
   for (let i = 0; i < productTypes.length; i++) {
-    const foodName = productTypes[i].selected.querySelector(".strong").innerText
+    const foodName = productTypes[i].selected.querySelector(".strong").innerText;
     lines[i].firstElementChild.innerText = foodName;
     whatsAppText += foodName;
     whatsAppText += trailingString[i];
 
-    const price = productTypes[i].selected.querySelector(".price").innerText.substr(3);
+    const price = productTypes[i].selected.querySelector(".price").innerText.substr(currencySymbolLen);
     lines[i].lastElementChild.innerText = price;
     totalPrice += parseFloat(price.replace(",", "."));
   }
-  totalPrice = totalPrice.toFixed(2);
+  const pricePrecision = 2;
+  totalPrice = totalPrice.toFixed(pricePrecision);
   whatsAppText += totalPrice;
   whatsAppText += "\n\n";
   const priceText = ("R$ " + totalPrice).replace(".", ",");

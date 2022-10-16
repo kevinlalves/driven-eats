@@ -1,9 +1,10 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
 const app = express();
+app.disable("x-powered-by");
+
 const port = 8000;
 
-app.use(express.static(path.join(__dirname, ".")));
+app.use(express.static("."));
 
 app.get("/", (req, res) => {
   res.send("index");
