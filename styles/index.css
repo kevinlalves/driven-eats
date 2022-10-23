@@ -148,7 +148,7 @@ img {
   user-select: none;
 }
 
-.noSelect:focus {
+.product:focus {
   outline: none !important;
 }
 
